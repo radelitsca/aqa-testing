@@ -1,20 +1,20 @@
 <?xml version = "1.0" encoding = "UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 
-<suite name = "Regression tests">
-
-    <test name = "Regression App tests">
+<suite name="Regression tests">
+    <test name="Regression App tests">
 
         <groups>
             <define name="all">
                 <include name="regression"/>
-                </define>
+            </define>
             <run>
                 <include name="regression"/>
             </run>
         </groups>
+
         <classes>
-            <class name = "ua.ithillel.AppTest"/>
+            <class name="ua.ithillel.AppTest"/>
         </classes>
     </test>
 </suite>

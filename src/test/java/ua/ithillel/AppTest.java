@@ -8,21 +8,25 @@ import ua.ithillel.RetryTools.MyRetry;
 
 public class AppTest {
     @Test(groups = "smoke")
-    public void testFirst(){
+    public void testFirst() {
 
     }
 
-    @Test (groups = "regression", retryAnalyzer = MyRetry.class)
+    @Test(groups = "regression")
+    public void testSecond() {
+        System.out.println("This is my second test");
+    }
+
+    @Test(groups = "regression", retryAnalyzer = MyRetry.class)
     public void testRetry() {
         Assert.assertTrue(true);
     }
 
-    @Test (groups = "regression")
+    @Test(groups = "regression")
     public void testRetryWithListener() {
         System.out.println("Hey");
         Assert.assertEquals(1, 5);
     }
-
 
 
     @DataProvider
@@ -30,12 +34,13 @@ public class AppTest {
         return new Object[][]{
                 {"Cat", "Murka"},
                 {"Dog", "Pushok"},
-        }; }
+        };
+    }
+
     @Test(dataProvider = "createData", groups = "smoke")
     public void testData(String animal, String name) {
-        System.out.println(animal + " " + name); }
-
-
+        System.out.println(animal + " " + name);
+    }
 
 
 }
